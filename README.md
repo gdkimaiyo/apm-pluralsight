@@ -1,4 +1,5 @@
 # apm-pluralsight
+
 Product Management Application. A Pluralsight Angular Getting Started Course by [Deborah Kurata](https://github.com/DeborahK).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
@@ -27,7 +28,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
