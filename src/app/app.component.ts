@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import {
-  faArrowCircleUp
-} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +6,7 @@ import {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  arrowUp = faArrowCircleUp;
-  title = 'Angular: Getting Started';
+  title: string = 'Product Management';
 
   constructor() { }
 

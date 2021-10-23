@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductsComponent } from './components/products/products.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 @NgModule({
   declarations: [

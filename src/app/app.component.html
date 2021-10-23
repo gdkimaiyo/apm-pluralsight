@@ -1,10 +1,11 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <div>My App Component</div>
-  <button mat-raised-button color="accent">
-    <fa-icon [icon]="arrowUp" class="fa-icon"></fa-icon>
-    Accent
-  </button>
-</div>
+<main class="layout">
+  <nav class="navbar">
+    <app-navbar></app-navbar>
+  </nav>
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+  <footer>
+    <!-- FOOTER -->
+  </footer>
+</main>
