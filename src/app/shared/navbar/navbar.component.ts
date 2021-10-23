@@ -7,6 +7,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import {
   faBars
 } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -20,6 +21,8 @@ export class NavbarComponent implements OnInit {
   );
 
   barsIcon = faBars;
+  githubIcon = faGithub;
+  linkedinIcon = faLinkedin;
 
   constructor(
     private breakpointObserver: BreakpointObserver,

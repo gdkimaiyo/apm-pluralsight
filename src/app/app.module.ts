@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { MatButtonModule } from '@angular/material/button';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductsComponent } from './pages/products/products.component';
@@ -21,7 +20,6 @@ import { ProductsComponent } from './pages/products/products.component';
     AppRoutingModule,
     SharedModule,
     MatButtonModule,
-    FontAwesomeModule,
     BrowserAnimationsModule,
   ],
   providers: [],
