@@ -4,20 +4,45 @@
     </div>
     <div *ngIf="isHandset$ | async" class="nav-space"></div>
     <div *ngIf="isHandset$ | async; else normalMenu" [matMenuTriggerFor]="mobileMenu" class="sub-menu">
-        <fa-icon [icon]="barsIcon" class="fa-icon"></fa-icon>
+        <fa-icon [icon]="barsIcon"></fa-icon>
     </div>
 </div>
 
 <mat-menu #mobileMenu="matMenu">
     <button mat-menu-item (click)="navigateTo('/products')">Products</button>
     <button mat-menu-item (click)="navigateTo('/products')">Favourites</button>
+    <button mat-menu-item class="btn-link">
+        <a href="https://www.linkedin.com/in/gideon-kimaiyo/" target="_blank">
+            <fa-icon [icon]="linkedinIcon" class="social-icon"></fa-icon> LinkedIn
+        </a>
+    </button>
+    <button mat-menu-item class="btn-link">
+        <a href="https://github.com/gdkimaiyo/apm-pluralsight" target="_blank">
+            <fa-icon [icon]="githubIcon" class="social-icon"></fa-icon> GitHub
+        </a>
+    </button>
 </mat-menu>
 
 <ng-template #normalMenu>
-    <div class="normal-menu">
+    <div class="normal-menu-left">
         <mat-list role="list" class="horizontal-list">
             <mat-list-item role="listitem" (click)="navigateTo('/products')">Products</mat-list-item>
             <mat-list-item role="listitem" (click)="navigateTo('/products')">Favourites</mat-list-item>
+        </mat-list>
+    </div>
+    <div class="nav-space"></div>
+    <div class="normal-menu-right">
+        <mat-list role="list" class="horizontal-list">
+            <mat-list-item role="listitem">
+                <a href="https://www.linkedin.com/in/gideon-kimaiyo/" target="_blank">
+                    <fa-icon [icon]="linkedinIcon" class="social-icon"></fa-icon> LinkedIn
+                </a>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <a href="https://github.com/gdkimaiyo/apm-pluralsight" target="_blank">
+                    <fa-icon [icon]="githubIcon" class="social-icon"></fa-icon> GitHub
+                </a>
+            </mat-list-item>
         </mat-list>
     </div>
 </ng-template>
