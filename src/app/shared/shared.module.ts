@@ -4,6 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StarComponent } from './star/star.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 
@@ -15,6 +16,7 @@ import { MatListModule } from '@angular/material/list';
   ],
   imports: [
     CommonModule,
+    MatButtonModule,
     MatMenuModule,
     MatListModule,
     FontAwesomeModule,
@@ -22,6 +24,7 @@ import { MatListModule } from '@angular/material/list';
   exports: [
     NavbarComponent,
     NotFoundComponent,
+    MatButtonModule,
     MatMenuModule,
     MatListModule,
     FontAwesomeModule,
