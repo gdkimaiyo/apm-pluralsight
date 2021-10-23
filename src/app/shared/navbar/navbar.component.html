@@ -1,0 +1,23 @@
+<div class="nav-bar">
+    <div class="brand-logo" (click)="navigateTo()">
+        Product Management
+    </div>
+    <div *ngIf="isHandset$ | async" class="nav-space"></div>
+    <div *ngIf="isHandset$ | async; else normalMenu" [matMenuTriggerFor]="mobileMenu" class="sub-menu">
+        <fa-icon [icon]="barsIcon" class="fa-icon"></fa-icon>
+    </div>
+</div>
+
+<mat-menu #mobileMenu="matMenu">
+    <button mat-menu-item (click)="navigateTo('/products')">Products</button>
+    <button mat-menu-item (click)="navigateTo('/products')">Favourites</button>
+</mat-menu>
+
+<ng-template #normalMenu>
+    <div class="normal-menu">
+        <mat-list role="list" class="horizontal-list">
+            <mat-list-item role="listitem" (click)="navigateTo('/products')">Products</mat-list-item>
+            <mat-list-item role="listitem" (click)="navigateTo('/products')">Favourites</mat-list-item>
+        </mat-list>
+    </div>
+</ng-template>
