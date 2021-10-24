@@ -7,6 +7,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatMenuModule,
     MatListModule,
+    MatDividerModule,
     FontAwesomeModule,
   ],
   exports: [
@@ -27,6 +29,7 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatMenuModule,
     MatListModule,
+    MatDividerModule,
     FontAwesomeModule,
   ],
 })
