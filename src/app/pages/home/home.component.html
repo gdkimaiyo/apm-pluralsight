@@ -1,11 +1,13 @@
-<main class="home-content">
-    <h1>
-        Welcome to {{title}}!!
-    </h1>
-    <div>My App Component</div>
-    <mat-divider></mat-divider>
-    <button mat-raised-button color="accent">
-        <fa-icon [icon]="arrowUp" class="fa-icon"></fa-icon>
-        Accent
-    </button>
+<main>
+    <section class="main-section">
+        <article class="landing-info">
+            <h1 class="main-header">Product Management App</h1>
+            <p class="sub-header">Manage your products like a pro!</p>
+            <button mat-flat-button color="primary" routerLink="/products">Get Started</button>
+        </article>
+        <article class="landing-image">
+            <img src="../../../assets/images/landing_image_2.jpg" alt="landing product image">
+        </article>
+    </section>
+    <mat-divider class="divider"></mat-divider>
 </main>
