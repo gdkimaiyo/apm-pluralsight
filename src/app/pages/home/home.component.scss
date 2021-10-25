@@ -56,6 +56,55 @@ main {
   padding: 12px 0;
   line-height: normal;
 }
+.landing-btn {
+  font-size: 18px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.card-section {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1080px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+.example-card {
+  width: 33%;
+  max-width: 33%;
+  padding: 24px 16px;
+  margin: 12px;
+  font-size: 16px !important;
+  align-content: center;
+  flex-grow: 1;
+}
+.example-card .mat-card-subtitle, .mat-card-content {
+  font-size: 16px;
+}
+.example-card .mat-list-base {
+  padding-top: 0;
+}
+.example-card .mat-list-base .mat-list-item {
+  height: 24px;
+  font-size: 14px;
+}
+.mat-card-actions { 
+  margin-left: 4px;
+}
+.mat-card-actions button a { 
+  text-decoration: none;
+}
+.mat-card-actions button a { 
+  color: rgba(67, 80, 175);
+}
+.mat-card-actions .mat-button {
+  margin: 0;
+  padding: 0 10px;
+}
+.social-icon {
+  margin-right: 4px;
+}
 
 @media only screen and (max-width: 575px){
   main {
@@ -95,6 +144,17 @@ main {
   }
   .divider {
     margin: 0 12px 0 8px;
+  }
+  .card-section {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 5%;
+  }
+  .example-card {
+    width: 88%;
+    max-width: 88%;
+    margin: 12px;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 576px) {

@@ -3,11 +3,80 @@
         <article class="landing-info">
             <h1 class="main-header">Product Management App</h1>
             <p class="sub-header">Manage your products like a pro!</p>
-            <button mat-flat-button color="primary" routerLink="/products">Get Started</button>
+            <button mat-flat-button color="primary" routerLink="/products" class="landing-btn">Get Started</button>
         </article>
         <article class="landing-image">
             <img src="../../../assets/images/landing_image_2.jpg" alt="landing product image">
         </article>
     </section>
     <mat-divider class="divider"></mat-divider>
+    <section class="card-section">
+        <mat-card class="example-card">
+            <mat-card-title>About this App</mat-card-title>
+            <mat-card-subtitle>Product Management</mat-card-subtitle>
+            <mat-card-content>
+                <p>This is a Product management app. Some of the things you can do with this app are: </p>
+                <mat-list>
+                    <mat-list-item> View a list of products </mat-list-item>
+                    <mat-list-item> Search for a product </mat-list-item>
+                    <mat-list-item> View product details </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-flat-button color="primary" routerLink="/products">
+                    Get Started
+                </button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="example-card">
+            <mat-card-title>Pluralsight</mat-card-title>
+            <mat-card-subtitle>Deborah Kurata</mat-card-subtitle>
+            <mat-card-content>
+                <p>
+                    Pluralsight: An educational company that offers a variety of video training
+                    courses for software developers, IT administrators, and creative professionals through its website.
+                </p>
+                <p>Find out more below.</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-stroked-button color="primary">
+                    <a href="https://www.pluralsight.com/" target="_blank">Pluralsight</a>
+                </button>
+                <button mat-button>
+                    <a href="https://twitter.com/deborahkurata" target="_blank">
+                        <fa-icon [icon]="twitterIcon" class="social-icon"></fa-icon> @deborahkurata
+                    </a>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="example-card">
+            <mat-card-title>About the Developer</mat-card-title>
+            <mat-card-subtitle>Gideon Kimaiyo - Software Engineer</mat-card-subtitle>
+            <mat-card-content>
+                <p>
+                    Over 3 years now, Gideon has been building clean, appealing 
+                    web apps for both Desktop and Mobile. Gideon focuses on making the app user-friendly and comply 
+                    with the latest standards.
+                </p>
+                <p>Find out more about Gideon below.</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>
+                    <a href="https://www.linkedin.com/in/gideon-kimaiyo/" target="_blank">
+                        <fa-icon [icon]="linkedinIcon" class="social-icon"></fa-icon> LinkedIn
+                    </a>
+                </button>
+                <button mat-button>
+                    <a href="https://github.com/gdkimaiyo/apm-pluralsight" target="_blank">
+                        <fa-icon [icon]="githubIcon" class="social-icon"></fa-icon> GitHub
+                    </a>
+                </button>
+                <button mat-button>
+                    <a href="https://twitter.com/gideonGDK" target="_blank">
+                        <fa-icon [icon]="twitterIcon" class="social-icon"></fa-icon> @gideonGDK
+                    </a>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </section>
 </main>

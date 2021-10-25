@@ -1,6 +1,6 @@
 # apm-pluralsight
 
-Product Management Application. A Pluralsight Angular Getting Started Course by [Deborah Kurata](https://github.com/DeborahK).
+Product Management Application. A Pluralsight Course: Angular Getting Started by [Deborah Kurata](https://github.com/DeborahK).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
