@@ -1,8 +1,8 @@
 main {
   margin: 0 auto;
   width: 100%;
-  height: 50vh;
-  margin-top: 200px;
+  height: 58vh;
+  padding-top: 200px;
   text-align: center;
 }
 .not-found-header {
@@ -11,4 +11,12 @@ main {
 }
 .btn-icon {
   margin-right: 6px;
+}
+@media only screen and (max-width: 575px){
+  main {
+    padding-top: 150px;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 576px) {
+  // Other Device Widths
 }
