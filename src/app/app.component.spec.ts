@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'amp-pluralsight'`, () => {
+  it(`should have as title 'apm-pluralsight'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('amp-pluralsight');
+    expect(app.title).toEqual('apm-pluralsight');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('amp-pluralsight app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('apm-pluralsight app is running!');
   });
 });
