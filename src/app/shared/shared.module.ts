@@ -8,12 +8,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     StarComponent,
     NavbarComponent,
     NotFoundComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -26,6 +28,7 @@ import { MatDividerModule } from '@angular/material/divider';
   exports: [
     NavbarComponent,
     NotFoundComponent,
+    FooterComponent,
     MatButtonModule,
     MatMenuModule,
     MatListModule,
