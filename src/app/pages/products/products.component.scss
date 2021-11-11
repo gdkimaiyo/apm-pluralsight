@@ -1,0 +1,109 @@
+.main-section {
+  padding-top: 32px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1080px;
+  margin-bottom: 1%;
+}
+
+.heading {
+  font-size: 24px;
+  text-align: left;
+  font-weight: 600;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+.search-section {
+  width: 100%;
+}
+
+.table-content { 
+  mat-card{
+    margin-bottom: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;    
+    border-radius: 10px !important;
+    padding: 0;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+table td {
+  cursor: pointer;
+}
+
+.table-footer {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+}
+
+.table-extra {
+  flex-grow: 1;
+}
+.paginator {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.table-title {
+  font-weight: 500;
+  font-size: 16px;
+  color: #335dba;
+}
+
+.table-subtitle {
+  font-weight: 500;
+}
+
+.cell {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  padding-right: 8px;
+}
+
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10%;
+  width: 100%;
+  ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+      stroke: #335dba !important;            
+  }
+}
+
+.search-filter {
+  display: inline-block;
+}
+
+mat-icon {
+  padding-right: 12px;;
+}
+
+@media only screen and (max-width: 575px){
+    .main-section {
+        width: 90%;
+        max-width: 90%;
+        padding: 0;
+        padding-top: 32px;
+    }
+    .table-content {
+        mat-card{
+          margin-bottom: 20px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;    
+          border-radius: 10px !important;
+          padding: 0;
+        }
+      }
+  }
+  @media only screen and (max-width: 1024px) and (min-width: 576px) {
+    // Other Device Widths
+  }
+
+
