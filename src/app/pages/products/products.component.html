@@ -8,7 +8,7 @@
             </mat-icon>
             <mat-label>Search product</mat-label>
             <input #searchInput matInput autocomplete="off" (keyup)="searchFilter($event)"
-                placeholder="product, code, price, rating, release date">
+                placeholder="Search by name, price, rating, release date">
         </mat-form-field>
     </div>
 
@@ -25,8 +25,8 @@
 
                 <!-- Product Code -->
                 <ng-container matColumnDef="code">
-                    <th mat-header-cell *matHeaderCellDef class="table-title">Code</th>
-                    <td mat-cell *matCellDef="let element" class="td-cell">
+                    <th mat-header-cell *matHeaderCellDef class="table-title" id="desktop">Code</th>
+                    <td mat-cell *matCellDef="let element" class="td-cell" id="desktop">
                         <div class="cell"><p>{{element.productCode}}</p></div>
                     </td>
                 </ng-container>
@@ -49,14 +49,14 @@
 
                 <!-- Product rating -->
                 <ng-container matColumnDef="rating">
-                    <th mat-header-cell *matHeaderCellDef class="table-title">Rating</th>
-                    <td mat-cell *matCellDef="let element" class="td-cell">
+                    <th mat-header-cell *matHeaderCellDef class="table-title" id="desktop">Rating</th>
+                    <td mat-cell *matCellDef="let element" class="td-cell" id="desktop">
                         <div class="cell"><p>{{ element.starRating }}</p></div>
                     </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="displayResponse(row)"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="displayProduct(row)"></tr>
             </table>
             <div *ngIf="loading==true">
                 <div *ngIf="loading==true" class="loader">

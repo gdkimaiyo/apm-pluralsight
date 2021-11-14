@@ -5653,6 +5653,14 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+ngx-avatar@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/ngx-avatar/-/ngx-avatar-4.1.0.tgz#f3f4b47b7490cdb83d1bfffd535c199c15559307"
+  integrity sha512-0cIaCYOeY7tNsr9Zdg7SmgVG3Yka5mQDvYboybjP4yF47o2XO/rvkRaY98N5wtRF8FL9+OzLXfHbrvYGDGEomQ==
+  dependencies:
+    ts-md5 "^1.2.4"
+    tslib "^2.0.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -8082,6 +8090,11 @@ tree-kill@1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
+
+ts-md5@^1.2.4:
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/ts-md5/-/ts-md5-1.2.9.tgz#22c9fd2baafdfdebee1068ff4d2dc215ff51df77"
+  integrity sha512-/Efr7ZfGf8P+d9HXh0PLQD1CDipqD8j9apCFG96pODDoEaFLxXpV4En6tAc6y3fWyfhFGrqtNBRBS+eLVIB2uQ==
 
 ts-node@~8.3.0:
   version "8.3.0"

@@ -1,0 +1,31 @@
+<main *ngFor="let product of selectedProduct">
+    <section class="avatar">
+        <article class="product-photo">
+            <ngx-avatar src="{{product?.imageUrl}}" name="{{product?.productName}}" size=300 [round]="false"
+                id="ngx-avtr"></ngx-avatar>
+        </article>
+        <article class="product-name">
+            <h3 style="font-weight: 600; margin: 0;">
+                {{ product?.productName }}
+            </h3>
+            <p style="margin: 0;">
+                {{ product?.productCode }} <br>
+                Release Date: 
+                <span class="muted">
+                    {{ product?.releaseDate }}
+                </span>
+                <br>
+                {{ product?.price }}
+                <br>
+                {{ product?.starRating }}
+            </p>
+        </article>
+    </section>
+    <section class="modal-nav">
+        <mat-divider style="margin-bottom: 0;"></mat-divider>
+        <mat-list>
+            <mat-list-item class="nav-item">Description</mat-list-item>
+        </mat-list>
+        <mat-divider style="margin-top: 0;"></mat-divider>
+    </section>
+</main>

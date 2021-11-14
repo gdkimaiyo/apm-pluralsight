@@ -80,6 +80,7 @@ table td {
 
 .search-filter {
   display: inline-block;
+  width: 33%;
 }
 
 mat-icon {
@@ -87,23 +88,39 @@ mat-icon {
 }
 
 @media only screen and (max-width: 575px){
-    .main-section {
-        width: 90%;
-        max-width: 90%;
-        padding: 0;
-        padding-top: 32px;
+  .main-section {
+      width: 93%;
+      max-width: 93%;
+      padding: 0;
+      margin: 0 8px;
+      padding-top: 32px;
+  }
+  .heading,
+  .search-section {
+    text-align: center;
+  }
+  .search-section .search-filter {
+    width: 90%;
+  }
+  .table-content {
+    mat-card{
+      margin-bottom: 20px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;    
+      border-radius: 10px !important;
+      padding: 0;
     }
-    .table-content {
-        mat-card{
-          margin-bottom: 20px;
-          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;    
-          border-radius: 10px !important;
-          padding: 0;
-        }
-      }
   }
-  @media only screen and (max-width: 1024px) and (min-width: 576px) {
-    // Other Device Widths
+  #desktop {
+    display: none;
   }
-
-
+}
+@media only screen and (max-width: 1024px) and (min-width: 576px) {
+  // Other Device Widths
+  .main-section {
+    width: 95%;
+    max-width: 95%;
+    padding: 0;
+    margin: 12px 18px;
+    padding-top: 32px;
+  }
+}
