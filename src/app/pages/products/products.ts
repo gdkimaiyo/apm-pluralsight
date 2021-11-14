@@ -41,7 +41,7 @@ export const PRODUCTS = [
     },
     {
         "productId": 10,
-        "productName": "Video Game Controller",
+        "productName": "Video Controller",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2020",
         "description": "Standard two-button video game controller",

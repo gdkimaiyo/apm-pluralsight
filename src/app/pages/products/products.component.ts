@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -45,6 +46,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   paginator!: MatPaginator;
 
   constructor(
+    private router: Router,
     public dialog: MatDialog,
   ) { }
 
@@ -68,8 +70,9 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     this.page = event;
   }
 
-  displayResponse(data: any) {
+  displayProduct(data: any) {
     console.log("Selected Product: ", data);
+    this.router.navigateByUrl(`products/${data.productId}`);
   }
 
   searchFilter(event: Event) {
