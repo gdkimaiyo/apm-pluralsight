@@ -41,6 +41,8 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     'rating',
   ];
 
+  ratings: number[] = [1, 2, 3, 4, 5];
+
   destroy$ = new Subject();
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -52,7 +54,6 @@ export class ProductsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.loading = true;
-    console.log(PRODUCTS);
     this.dataSource.data = PRODUCTS;
     this.loading = false;
   }
@@ -71,7 +72,6 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   }
 
   displayProduct(data: any) {
-    console.log("Selected Product: ", data);
     this.router.navigateByUrl(`products/${data.productId}`);
   }
 

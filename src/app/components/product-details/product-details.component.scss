@@ -5,6 +5,7 @@ main {
   max-width: 1080px;
   margin-bottom: 1%;
 }
+
 .avatar {
   display: flex;
   align-items: center;
@@ -21,11 +22,30 @@ main {
 .muted {
   color: #6c757d;
 }
-.nav-item {
-  margin: 0 8px;
+
+.nav-item button {
+  padding: 0 !important;
+}
+.nav-item button:hover {
+  background-color: #fff !important;
 }
 ::ng-deep .mat-list {
   padding: 0 !important;
+}
+
+.starrating > label {     
+  cursor: pointer;
+  margin: 2px 0;
+  font-size: 15px;    
+  display: inline-block; 
+  color: rgba(0, 0, 0, 0.3);
+}
+.starrating .selected {
+  color: rgba(0, 0, 0);
+}
+
+.fav-icon {
+  margin-right: 4px;
 }
 
 @media only screen and (max-width: 575px){
@@ -36,6 +56,20 @@ main {
     margin: 0 8px;
     padding-top: 32px;
   }
+  .avatar {
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+  .avatar .product-photo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+  .starrating > label{
+    margin-left: 0;
+  }
 }
 @media only screen and (max-width: 1024px) and (min-width: 576px) {
   // Other Device Widths
@@ -45,5 +79,8 @@ main {
     padding: 0;
     margin: 12px 18px;
     padding-top: 32px;
+  }
+  .starrating > label{
+    margin-left: 0;
   }
 }
