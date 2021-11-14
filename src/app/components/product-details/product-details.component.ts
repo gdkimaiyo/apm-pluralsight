@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PRODUCTS } from "src/app/pages/products/products";
+
+import { faArrowLeft, faListUl } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product-details',
@@ -8,18 +10,29 @@ import { PRODUCTS } from "src/app/pages/products/products";
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-  selectedProduct: any; 
-  constructor(private route: ActivatedRoute) { }
+  selectedProduct: any;
+  ratings: number[] = [1, 2, 3, 4, 5];
+  backArrow = faArrowLeft;
+  emptyList = faListUl;
+  
+  constructor(private route: ActivatedRoute, private router: Router,) { }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-
     if (id) {
-      this.selectedProduct = PRODUCTS.filter((product: any) => id === product.productId);
-    } else {
-      console.log("INVALID Product Id, Re-routing...");
+      PRODUCTS.forEach((product: any) => {
+        if (id === product.productId) {
+          this.selectedProduct = {...product};
+        }
+      });
     }
+  }
 
-    console.log("SELECTED PRODUCT: ", this.selectedProduct);
+  goBack(): void {
+    this.router.navigateByUrl('products');
+  }
+
+  scrollTo(element: any): void {
+    element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
   }
 }

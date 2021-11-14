@@ -1,31 +1,61 @@
-<main *ngFor="let product of selectedProduct">
-    <section class="avatar">
-        <article class="product-photo">
-            <ngx-avatar src="{{product?.imageUrl}}" name="{{product?.productName}}" size=300 [round]="false"
-                id="ngx-avtr"></ngx-avatar>
-        </article>
-        <article class="product-name">
-            <h3 style="font-weight: 600; margin: 0;">
-                {{ product?.productName }}
+<main>
+    <section *ngIf="selectedProduct">
+        <section class="avatar">
+            <article class="product-photo">
+                <ngx-avatar src="{{selectedProduct?.imageUrl}}" name="{{selectedProduct?.productName}}" size=250
+                    [round]="false" id="ngx-avtr"></ngx-avatar>
+            </article>
+            <article class="product-name">
+                <h3 style="font-weight: 600; margin: 0;">
+                    {{ selectedProduct?.productName }}
+                </h3>
+                <p style="margin: 0;">
+                    {{ selectedProduct?.productCode }} <br>
+                    Release Date:
+                    <span class="muted">
+                        {{ selectedProduct?.releaseDate }}
+                    </span>
+                    <br>
+                    {{ selectedProduct?.price }}
+                    <br>
+                    <span class="starrating" matTooltip="{{selectedProduct?.starRating}} rating">
+                        <label *ngFor="let rating of ratings"
+                            [ngClass]="{'selected': (rating <= selectedProduct?.starRating)}">
+                            <mat-icon>star</mat-icon>
+                        </label>
+                    </span>
+                </p>
+            </article>
+        </section>
+        <section id="nav">
+            <mat-divider style="margin-bottom: 0;"></mat-divider>
+            <mat-list>
+                <mat-list-item class="nav-item">
+                    <button mat-button color="primary" (click)="scrollTo(description)">Description</button>
+                </mat-list-item>
+            </mat-list>
+            <mat-divider style="margin-top: 0;"></mat-divider>
+        </section>
+        <section #description style="padding: 12px;">
+            <article>
+                <p>{{ selectedProduct?.description }}</p>
+            </article>
+        </section>
+    </section>
+
+    <section *ngIf="!selectedProduct" style="padding: 12px; padding-left: 28px;">
+        <article>
+            <h3 style="font-weight: 600; margin: 0; color: #6c757d;">
+                <fa-icon [icon]="emptyList" class="fav-icon"></fa-icon> 
+                No product available!
             </h3>
-            <p style="margin: 0;">
-                {{ product?.productCode }} <br>
-                Release Date: 
-                <span class="muted">
-                    {{ product?.releaseDate }}
-                </span>
-                <br>
-                {{ product?.price }}
-                <br>
-                {{ product?.starRating }}
-            </p>
         </article>
     </section>
-    <section class="modal-nav">
-        <mat-divider style="margin-bottom: 0;"></mat-divider>
-        <mat-list>
-            <mat-list-item class="nav-item">Description</mat-list-item>
-        </mat-list>
-        <mat-divider style="margin-top: 0;"></mat-divider>
+    <section style="padding: 12px;">
+        <article>
+            <button mat-button color="primary" (click)="goBack()">
+                <fa-icon [icon]="backArrow" class="fav-icon"></fa-icon> Go Back
+            </button>
+        </article>
     </section>
 </main>
