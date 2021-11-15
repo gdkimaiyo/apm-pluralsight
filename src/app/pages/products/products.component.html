@@ -32,7 +32,7 @@
                     <th mat-header-cell *matHeaderCellDef class="table-title" id="desktop">Code</th>
                     <td mat-cell *matCellDef="let element" class="td-cell" id="desktop">
                         <div class="cell">
-                            <p>{{element.productCode}}</p>
+                            <p>{{element.productCode.toLowerCase()}}</p>
                         </div>
                     </td>
                 </ng-container>
@@ -91,5 +91,9 @@
                 <mat-paginator class="paginator" [pageSize]="10" showFirstLastButtons></mat-paginator>
             </div>
         </mat-card>
+    </div>
+
+    <div class="attribution">
+        <a href="https://www.exchangerate-api.com" target="_blank">Price Conversion By Exchange Rate API</a>
     </div>
 </div>

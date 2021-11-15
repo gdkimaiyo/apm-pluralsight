@@ -5,16 +5,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { PRODUCTS } from "./products";
+import { PRODUCTS } from "src/app/shared/products";
+import { getCurrency, formatCurrency } from 'src/app/utils/helpers';
+import { CurrencyConverterService } from 'src/app/shared/services/currency-converter.service';
 
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
-
-interface FilterOption {
-  value: string;
-  label: string;
-  groupName: string;
-}
 
 @Component({
   selector: 'app-products',
@@ -22,9 +17,10 @@ interface FilterOption {
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit, AfterViewInit {
-  dataSource = new MatTableDataSource<any>([]);
+  dataSource: any = new MatTableDataSource<any>([]);
   page: any = 1;
   loading: boolean = false;
+  userCurrency: any = 'USD';
 
   searchIcon = faSearch;
 
@@ -32,7 +28,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   nativeSelectId: any;
   tempData: any = [];
 
-  durationInSeconds = 5;  
+  durationInSeconds = 5;
   displayedColumns: string[] = [
     'product',
     'code',
@@ -50,12 +46,48 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   constructor(
     private router: Router,
     public dialog: MatDialog,
+    private currencyConverter: CurrencyConverterService,
   ) { }
 
   ngOnInit(): void {
     this.loading = true;
-    this.dataSource.data = PRODUCTS;
-    this.loading = false;
+    // Local Storage
+    if (localStorage.getItem("products") && typeof (Storage) !== undefined) {
+      this.dataSource.data = JSON.parse(localStorage.getItem("products") || '[]'); // Alternatively use null-assertion operator
+      this.loading = false;
+    } else {
+      this.dataSource.data = PRODUCTS;
+      this.getUserCurrency();
+      // Convert Product Price to reflect the Visitor's Own Country Currency 
+      this.convertProductPrice();
+    }
+  }
+
+  getUserCurrency(): void {
+    this.currencyConverter.getUserCountry().subscribe((res) => {
+      const countryCode = (res.countryCode) ? res.countryCode : 'US';
+      this.userCurrency = getCurrency(countryCode);
+    }, (error) => {
+      console.log("ERROR: ", error.message);
+      // Fallback in case API is blocked by cors
+      const countryCode = 'US';
+      this.userCurrency = getCurrency(countryCode);
+    });
+  }
+
+  convertProductPrice(): void {
+    this.currencyConverter.currencyConverter().subscribe((res) => {
+      const rate = (res.rates[this.userCurrency.currency]) ? res.rates[this.userCurrency.currency] : 1;
+      this.dataSource.data.forEach((product: any) => {
+        const newPrice = product.price * rate;
+        product.price = formatCurrency(newPrice, this.userCurrency.currency);
+      });
+      localStorage.setItem("products", JSON.stringify(this.dataSource.data));
+      this.loading = false;
+    }, (error) => {
+      console.log("ERROR: ", error.message);
+      this.loading = false;
+    });
   }
 
   ngAfterViewInit() {

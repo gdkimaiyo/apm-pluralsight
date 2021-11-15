@@ -28,6 +28,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "iso-country-currency": "^0.5.3",
     "ngx-avatar": "^4.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
