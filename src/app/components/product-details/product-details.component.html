@@ -10,13 +10,17 @@
                     {{ selectedProduct?.productName }}
                 </h3>
                 <p style="margin: 0;">
-                    {{ selectedProduct?.productCode }} <br>
+                    {{ selectedProduct?.productCode.toLowerCase() }} <br>
                     Release Date:
                     <span class="muted">
                         {{ selectedProduct?.releaseDate }}
                     </span>
                     <br>
-                    {{ selectedProduct?.price }}
+                    <span></span>
+                    <span *ngIf="!default; else elseBlock">{{ selectedProduct?.price }}</span>
+                    <ng-template #elseBlock>
+                        <span>${{ selectedProduct?.price }}</span>
+                    </ng-template>
                     <br>
                     <span class="starrating" matTooltip="{{selectedProduct?.starRating}} rating">
                         <label *ngFor="let rating of ratings"
